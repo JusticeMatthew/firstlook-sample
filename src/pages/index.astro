@@ -1,16 +1,20 @@
 ---
+import { getCollection } from "astro:content";
+import BaseLayout from "$/layouts/BaseLayout.astro";
 
+const games = await getCollection("games");
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+  <div class="container">
+    <section
+      class="border-border bg-section my-12 flex flex-col items-center justify-center rounded-xl border-4 p-12">
+      <h1 class="text-heading text-3xl font-bold">
+        Which of these games do you like?
+      </h1>
+      <div class="grid grid-cols-3">
+        {games.map((game: any) => <div></div>)}
+      </div>
+    </section>
+  </div>
+</BaseLayout>

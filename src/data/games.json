@@ -1,0 +1,50 @@
+[
+  {
+    "id": "001",
+    "title": "Baulders Gate 3",
+    "image": {
+      "src": "../assets/bg3.webp",
+      "alt": "Baulders Gate 3 cover"
+    }
+  },
+  {
+    "id": "002",
+    "title": "Cyberpunk 2077",
+    "image": {
+      "src": "../assets/cyberpunk.webp",
+      "alt": "Cyberpunk 2077 cover"
+    }
+  },
+  {
+    "id": "003",
+    "title": "Fallout 4",
+    "image": {
+      "src": "../assets/fallout.webp",
+      "alt": "Fallout 4 cover"
+    }
+  },
+  {
+    "id": "004",
+    "title": "Fallout: New Vegas",
+    "image": {
+      "src": "../assets/fallout2.webp",
+      "alt": "Fallout: New Vegas cover"
+    }
+  },
+  {
+    "id": "005",
+    "title": "Skyrim Special Edition",
+    "image": {
+      "src": "../assets/skyrim.webp",
+      "alt": "Skyrim Special Edition cover"
+    }
+  },
+  {
+    "id": "006",
+    "title": "Skyrim",
+    "image": {
+      "src": "../assets/skyrim2.webp",
+      "alt": "Skyrim cover"
+    }
+  }
+]
