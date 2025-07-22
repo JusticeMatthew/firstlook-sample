@@ -7,6 +7,9 @@
   --color-section: oklch(0.2889 0.0465 197.14);
   --color-heading: oklch(0.8384 0.1722 83.57);
   --color-border: oklch(0.1886 0.0248 190.58);
+  --color-copy: oklch(0.9086 0.1051 93.66);
+  --color-gradient-top: oklch(0.8384 0.1722 83.57);
+  --color-gradient-bottom: oklch(0.6958 0.204259 43.491);
 }
 
 .container {

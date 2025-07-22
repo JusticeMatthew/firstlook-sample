@@ -3,6 +3,7 @@ import { type JSX, splitProps } from "solid-js";
 type CheckboxProps = {
   ref: (element: HTMLInputElement) => void;
   name: string;
+  game: any;
   value?: string;
   checked?: boolean;
   onInput: JSX.EventHandler<HTMLInputElement, InputEvent>;
@@ -11,33 +12,28 @@ type CheckboxProps = {
   required?: boolean;
   class?: string;
   label: string;
-  error?: string;
 };
 
-/**
- * Checkbox that allows users to select an option. The label next to the
- * checkbox describes the selection option.
- */
-export function Checkbox(props: CheckboxProps) {
-  const [, inputProps] = splitProps(props, [
-    "class",
-    "value",
-    "label",
-    "error",
-  ]);
+export default function GameCheckbox(props: CheckboxProps) {
+  const [, inputProps] = splitProps(props, ["game", "class", "value", "label"]);
 
   return (
-    <div class={props.class}>
-      <label class="flex space-x-4 font-medium select-none md:text-lg lg:text-xl">
+    <div class={`${props.class} group cursor-pointer`}>
+      <label class="text-copy inline space-x-4 font-medium select-none md:text-lg lg:text-xl">
+        <img
+          src={props.game.data.image.src}
+          alt={props.game.data.image.alt}
+          class="ring-heading mb-2 cursor-pointer rounded-xl shadow-lg group-has-[:checked]:ring-4"
+          width={200}
+          height={400}
+        />
         <input
           {...inputProps}
-          class="mt-1 h-4 w-4 cursor-pointer lg:mt-1 lg:h-5 lg:w-5"
+          class="accent-heading h-4 w-4"
           type="checkbox"
-          id={props.name}
+          id={props.game.title}
           value={props.value || ""}
           checked={props.checked}
-          aria-invalid={!!props.error}
-          aria-errormessage={`${props.name}-error`}
         />
         <span>{props.label}</span>
       </label>

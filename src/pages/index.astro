@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "$/layouts/BaseLayout.astro";
+import GameForm from "$/components/GameForm";
 
 const games = await getCollection("games");
 ---
@@ -12,9 +13,7 @@ const games = await getCollection("games");
       <h1 class="text-heading text-3xl font-bold">
         Which of these games do you like?
       </h1>
-      <div class="grid grid-cols-3">
-        {games.map((game: any) => <div></div>)}
-      </div>
+      <GameForm games={games} client:load />
     </section>
   </div>
 </BaseLayout>
