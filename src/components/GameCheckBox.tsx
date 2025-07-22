@@ -35,7 +35,7 @@ export default function GameCheckbox(props: CheckboxProps) {
           value={props.value || ""}
           checked={props.checked}
         />
-        <span>{props.label}</span>
+        <span class="ml-2">{props.label}</span>
       </label>
     </div>
   );
