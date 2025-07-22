@@ -1,5 +1,6 @@
 ---
 import "$/styles/global.css";
+import ThemeManager from "$/components/ThemeManager.astro";
 ---
 
 <html lang="en">
@@ -9,8 +10,30 @@ import "$/styles/global.css";
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Firstlook.gg</title>
+    <ThemeManager defaultTheme="auto" />
   </head>
   <body class="bg-background overflow-x-clip">
     <slot />
   </body>
 </html>
+
+<style is:global>
+  :root[data-theme="light"] {
+    body {
+      background-color: var(--color-section) !important;
+    }
+
+    section {
+      background-color: var(--color-background) !important;
+    }
+  }
+  :root[data-theme="dark"] {
+    body {
+      background-color: var(--color-background) !important;
+    }
+
+    section {
+      background-color: var(--color-section) !important;
+    }
+  }
+</style>
