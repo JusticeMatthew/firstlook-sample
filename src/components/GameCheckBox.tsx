@@ -18,8 +18,8 @@ export default function GameCheckbox(props: CheckboxProps) {
   const [, inputProps] = splitProps(props, ["game", "class", "value", "label"]);
 
   return (
-    <div class={`${props.class} group cursor-pointer`}>
-      <label class="text-copy inline space-x-4 font-medium select-none md:text-lg lg:text-xl">
+    <div class={`${props.class} group w-full cursor-pointer`}>
+      <label class="text-copy inline text-lg font-medium select-none">
         <img
           src={props.game.data.image.src}
           alt={props.game.data.image.alt}

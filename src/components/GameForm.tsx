@@ -23,7 +23,9 @@ export default function GameForm({ games }: GameFormProps) {
   };
 
   return (
-    <Form onSubmit={handleSubmit} class="mt-16 grid grid-cols-3 gap-8">
+    <Form
+      onSubmit={handleSubmit}
+      class="mt-16 grid max-w-fit grid-cols-3 gap-12">
       {games.map((game: any) => (
         <Field name={game.data.title} type="boolean">
           {(field, props) => (
@@ -38,7 +40,7 @@ export default function GameForm({ games }: GameFormProps) {
       ))}
       <button
         type="submit"
-        class="from-gradient-top to-gradient-bottom col-span-3 mt-12 cursor-pointer self-center rounded-2xl bg-linear-to-b px-18 py-2 text-2xl font-bold text-black/80 transition-all hover:scale-105">
+        class="from-gradient-top to-gradient-bottom col-span-3 mt-12 cursor-pointer self-center rounded-2xl bg-linear-to-b py-2 text-2xl font-bold text-black/80 transition-all hover:scale-105">
         Next
       </button>
     </Form>
