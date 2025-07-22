@@ -12,7 +12,7 @@ type GameFormProps = {
 };
 
 export default function GameForm({ games }: GameFormProps) {
-  const [gameForm, { Form, Field }] = createForm<GameForm>();
+  const [_, { Form, Field }] = createForm<GameForm>();
 
   const handleSubmit: SubmitHandler<GameForm> = (values) => {
     const checkedGames = Object.entries(values)
@@ -23,7 +23,7 @@ export default function GameForm({ games }: GameFormProps) {
   };
 
   return (
-    <Form onSubmit={handleSubmit} class="mt-12 grid grid-cols-3 gap-8">
+    <Form onSubmit={handleSubmit} class="mt-16 grid grid-cols-3 gap-8">
       {games.map((game: any) => (
         <Field name={game.data.title} type="boolean">
           {(field, props) => (
